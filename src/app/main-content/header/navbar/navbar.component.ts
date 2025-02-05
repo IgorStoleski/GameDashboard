@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { SettingsComponent } from "../../dashboard/settings/settings.component";
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,8 @@ import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     NgbDropdownModule,
     NgbNavModule,
-  ],
+    SettingsComponent
+],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
