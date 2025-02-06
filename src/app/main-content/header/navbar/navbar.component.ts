@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsComponent } from "../../dashboard/settings/settings.component";
+import { MaterialModule } from '../../../shared/material/material.module';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    NgbDropdownModule,
-    NgbNavModule,
-    SettingsComponent
+    SettingsComponent,
+    MaterialModule,
+    RouterLink,
 ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
