@@ -1,20 +1,26 @@
 section {
-    display: flex;
-    flex-direction: column ;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+  background-color: rgb(100, 149, 237);
 
-.title{
+  .title {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  }
 
-.player {
+  .player {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    button {
+      background-color: rgba(54, 81, 130, 0.3);
+      mat-icon {
+        color: black;
+      }
+    }
+  }
 }

@@ -19,14 +19,14 @@ export class SettingsComponent {
   openUserDialog() {
     const dialogRef = this.dialog.open(UsersComponent, {
       width: '600px',
-      height: '600px'
+      height: '300px'
     }) 
   }
 
   openEditDialog() {
     const dialogRef = this.dialog.open(EditUsersComponent, {
       width: '600px',
-      height: '600px'
+      height: '300px'
     }) 
   }
 
