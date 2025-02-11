@@ -2,11 +2,15 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
+}
 
-    .btn-settings {
-        display: flex;
-        flex-direction: column;
+.btn-settings {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
+    button {
+        color: white;
     }
 }
