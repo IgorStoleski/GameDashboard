@@ -8,7 +8,7 @@ import { EditUsersComponent } from './edit-users/edit-users.component';
   selector: 'app-settings',
   standalone: true,
   imports: [
-    MaterialModule
+    MaterialModule,
   ],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss'
