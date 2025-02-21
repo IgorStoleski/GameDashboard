@@ -1,0 +1,32 @@
+.platzierung {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-column ul,
+.right-column ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-column li,
+.right-column li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

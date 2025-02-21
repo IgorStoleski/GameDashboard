@@ -1,0 +1,16 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        color: white;
+    }
+}

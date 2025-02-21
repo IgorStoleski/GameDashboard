@@ -1,1 +1,21 @@
-<p>placering works!</p>
+<div class="platzierung">
+  <!-- <div class="left-column">
+    <h3>Spieler & Punkte</h3>
+    <ul>
+      <li *ngFor="let player of players">
+        <img [src]="player.avatar" alt="Avatar" *ngIf="player.avatar" />
+        <span>{{ player.name }}: {{ player.points }} Punkte</span>
+      </li>
+    </ul>
+  </div> -->
+
+  <h3>Platzierung</h3>
+  <div class="right-column">
+    <ol>
+      <li *ngFor="let player of players">
+        <img [src]="player.avatar" alt="Avatar" *ngIf="player.avatar" />
+        <span>Platz: {{ player.name }} mit {{ player.points }} Punkten</span>
+      </li>
+    </ol>
+  </div>
+</div>

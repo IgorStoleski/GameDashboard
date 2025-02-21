@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MaterialModule } from '../../shared/material/material.module';
 import { PlayerComponent } from './player/player.component';
 import { PlaceringComponent } from './placering/placering.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     MaterialModule,
-    PlayerComponent,
-    PlaceringComponent
+    RouterModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'

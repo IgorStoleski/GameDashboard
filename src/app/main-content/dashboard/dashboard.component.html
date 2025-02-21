@@ -1,10 +1,8 @@
 <section>
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab label="First">
-      <app-player></app-player>  
-    </mat-tab>
-    <mat-tab label="Second">
-      <app-placering></app-placering>
-    </mat-tab>
-  </mat-tab-group>
+  <div class="btn-dashboard">
+    <button mat-button [routerLink]="['player']" routerLinkActive="router-link-active" >Eingabe</button>
+    <button mat-button [routerLink]="['placering']" routerLinkActive="router-link-active" >Platzierung</button>
+  </div>
+  <router-outlet></router-outlet>
+
 </section>

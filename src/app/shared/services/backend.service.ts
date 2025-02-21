@@ -1,31 +1,19 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BackendService implements OnInit {
-  private apiUrl = 'https://localhost:3000/';
-  players: any;
+export class BackendService {
+  private http = inject(HttpClient);
+  private apiUrl = 'http://127.0.0.1:8000/player/api/v1/players/';
 
-  rounds = [
-    'round1', 'round2', 'round3', 'round4', 'round5',
-    'round6', 'round7', 'round8', 'round9', 'round10'
-  ]
-
-  constructor(private http: HttpClient) { }
-
-  ngOnInit(): void {
-    this.loadPlayerData();
+  getPlayers() {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-
-  loadPlayerData() {
-    this.http.get(this.apiUrl + 'player').subscribe((data) => {
-      this.players = data;
-    });
+  updatePlayerPoints(playerId: number, newPoints: number): Observable<any> {
+    return this.http.patch(`${this.apiUrl}${playerId}/`, { points: newPoints });
   }
-
-
 }

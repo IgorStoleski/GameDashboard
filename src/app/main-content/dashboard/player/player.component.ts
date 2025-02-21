@@ -12,14 +12,7 @@ import { Component } from '@angular/core';
   styleUrl: './player.component.scss'
 })
 export class PlayerComponent {
-  players: any;
   
-  constructor(private backend: BackendService) { }
 
-  getRounds(player: any){
-    return this.backend.rounds.map((round) => ({
-      label: `Runde ${round.charAt(round.length - 1)}`,
-      value: player[round]
-    })).filter((round) => round.value);
-  }
+  
 }
