@@ -38,4 +38,8 @@ export class PlayerWebsocketService {
   getPlayers(): Observable<any[]> {
     return this.playersSubject.asObservable();
   }
+
+  requestRefresh() {
+    this.socket.send(JSON.stringify({ action: "refresh" }));
+  }
 }

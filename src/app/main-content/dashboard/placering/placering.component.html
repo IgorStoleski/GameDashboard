@@ -9,12 +9,13 @@
     </ul>
   </div> -->
 
-  <h3>Platzierung</h3>
   <div class="right-column">
     <ol>
-      <li *ngFor="let player of players">
-        <img [src]="player.avatar" alt="Avatar" *ngIf="player.avatar" />
-        <span>Platz: {{ player.name }} mit {{ player.points }} Punkten</span>
+      <li *ngFor="let player of players; let i = index"
+          [ngClass]="{ 'first-place': i === 0 }"
+          (click)="openEditDialog(player)">
+        <img [src]="player.avatar" alt="Avatar" *ngIf="player.avatar" width="80" height="80" />
+        <span>Platz {{ i + 1 }}: {{ player.name }} mit {{ player.total_score }} Punkten</span>
       </li>
     </ol>
   </div>
