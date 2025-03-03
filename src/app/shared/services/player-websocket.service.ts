@@ -13,7 +13,8 @@ export class PlayerWebsocketService {
   }
 
   private connect() {
-    this.socket = new WebSocket('ws://127.0.0.1:8000/ws/players/');
+    //this.socket = new WebSocket('ws://127.0.0.1:8000/ws/players/');
+    this.socket = new WebSocket('ws://10.10.0.100:8000/ws/players/');
 
     this.socket.onopen = () => {
       console.log("WebSocket connected ✅");
