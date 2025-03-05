@@ -6,16 +6,7 @@ export interface Player {
   id: number;
   name: string;
   total_score: number;
-  round_1: number;
-  round_2: number;
-  round_3: number;
-  round_4: number;
-  round_5: number;
-  round_6: number;
-  round_7: number;
-  round_8: number;
-  round_9: number;
-  round_10: number;
+  [key: string]: any;
 }
 
 @Injectable({
