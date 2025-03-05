@@ -29,7 +29,7 @@ export class DashboardComponent {
 
   constructor(private backendService: BackendService, private wsService: PlayerWebsocketService) {}
 
-  ngOnInit() {
+  /* ngOnInit() {
     // Initial Spieler vom Backend holen
     this.backendService.getPlayers().subscribe((players) => {
       this.players = players.map((p) => ({
@@ -52,6 +52,6 @@ export class DashboardComponent {
         ]
       }));
     });
-  }
+  } */
 }
 

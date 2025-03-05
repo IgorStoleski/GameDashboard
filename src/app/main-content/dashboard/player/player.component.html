@@ -1,13 +1,21 @@
-<div class="player-list">
-  <div *ngFor="let player of players" class="player-card">
-    <h3>{{ player.name }}</h3>
-    <div class="scores">
-      <input
-        *ngFor="let score of player.rounds; let i = index"
-        type="number"
-        [(ngModel)]="player.rounds[i]"
-        (change)="updateScores(player)"
-      />
+<div class="player-container">
+    <div *ngFor="let player of players" class="player-card">
+      <h3>{{ player.name }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Runde</th>
+            <th>Punkte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let round of rounds">
+            <td>{{ round }}</td>
+            <td>{{ player[round] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Gesamtpunkte:</strong> {{ player.total_score }}</p>
     </div>
   </div>
-</div>
+  
