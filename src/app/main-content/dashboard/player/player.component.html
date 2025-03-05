@@ -1,1 +1,11 @@
-<p>Player works fine</p>
+<div class="player-card">
+  <h3>{{ player.name }}</h3>
+  <div class="scores">
+    <input
+      *ngFor="let score of player.rounds; let i = index"
+      type="number"
+      [(ngModel)]="player.rounds[i]"
+    />
+  </div>
+  <button (click)="updateScores()">Punkte speichern</button>
+</div>

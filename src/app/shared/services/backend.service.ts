@@ -14,7 +14,7 @@ export class BackendService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  updatePlayerPoints(playerId: number, newPoints: number): Observable<any> {
+  updatePlayerScores(playerId: number, newPoints: number): Observable<any> {
     return this.http.patch(`${this.apiUrl}${playerId}/update_score/`, { points: newPoints });
   }
 }
