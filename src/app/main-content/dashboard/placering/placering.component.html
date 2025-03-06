@@ -12,7 +12,7 @@
   <div class="right-column">
     <ol>
       <li *ngFor="let player of players; let i = index"
-          [ngClass]="{ 'first-place': i === 0 }"
+          [ngClass]="{ 'first-place': i === 0, 'second-place': i === 1, 'third-place': i === 2 }"
           (click)="openEditDialog(player)">
         <img [src]="player.avatar" alt="Avatar" *ngIf="player.avatar" width="80" height="80" />
         <span>Platz {{ i + 1 }}: {{ player.name }} mit {{ player.total_score }} Punkten</span>

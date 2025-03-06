@@ -1,0 +1,19 @@
+<div class="edit-score-dialog">
+    <div class="edit-score-dialog-content">
+        <h2>{{ player.name }}</h2>
+        <span>Punkte eingeben</span>
+        
+        <form (ngSubmit)="updateScores()" class="edit-score-form">
+          <div *ngFor="let round of getRoundKeys()" class="edit-score-label">
+            <label>{{ round.replace('_', ' ') }}:</label>
+            <input type="text" [(ngModel)]="updatedScores[round]" name="{{ round }}" />
+          </div>
+        
+          <div class="edit-score-buttons">
+              <button mat-button type="submit">Speichern</button>
+              <button mat-button type="button" (click)="dialogRef.close()">Abbrechen</button>
+          </div>
+          <div class="reset-btn"><button mat-button color="warn" type="button" (click)="resetScores()">Reset</button></div>
+        </form>
+    </div>
+</div>

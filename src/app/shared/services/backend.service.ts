@@ -22,7 +22,7 @@ export class BackendService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  updatePlayerScores(playerId: number, newPoints: number): Observable<any> {
-    return this.http.patch(`${this.apiUrl}${playerId}/update_score/`, { points: newPoints });
+  updatePlayerScores(playerData: { id: number; [key: string]: number }): Observable<any> {
+    return this.http.patch(`${this.apiUrl}${playerData.id}/update_score/`, playerData);
   }
 }

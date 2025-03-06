@@ -1,0 +1,51 @@
+.edit-score-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    .edit-score-dialog-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .edit-score-form {
+            gap: 10px;
+
+            .edit-score-label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                padding-bottom: 10px;
+                input{
+                    width: 50px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                }
+            }
+            .edit-score-buttons{
+                padding-top: 10px;
+            }
+            .reset-btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 10px;
+            }
+
+
+        }
+
+        h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+    }
+}

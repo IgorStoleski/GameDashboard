@@ -3,6 +3,8 @@ import { MaterialModule } from '../../../shared/material/material.module';
 import { PlayerWebsocketService } from '../../../shared/services/player-websocket.service';
 import { BackendService } from './../../../shared/services/backend.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditScoreDialogComponent } from '../edit-score-dialog/edit-score-dialog.component';
 
 export interface Player {
   id: number;
@@ -35,29 +37,7 @@ export class PlayerComponent implements OnInit {
   players: Player[] = [];
   rounds: { key: string, label: string }[] = [];
 
-  constructor(private backendService: BackendService, private wsService: PlayerWebsocketService) { }
-
-  /* updateScores() {
-    const updateData: any = {};
-
-    // Füllt das Request-Objekt mit `round_1` bis `round_10`
-    this.player.rounds.forEach((score, index) => {
-      updateData[`round_${index + 1}`] = score;
-    });
-// Falls `points` benötigt wird
-
-    this.backendService.updatePlayerScores(this.player.id, updateData).subscribe(
-      (response) => {
-        console.log('Punkte aktualisiert:', response);
-        this.wsService.requestRefresh(); // WebSocket sendet Update-Anfrage
-      },
-      (error) => {
-        console.error('Fehler beim Speichern:', error);
-      }
-    );
-  } */
-
-
+  constructor(private backendService: BackendService, private wsService: PlayerWebsocketService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.generateRounds();
@@ -70,10 +50,24 @@ export class PlayerComponent implements OnInit {
       label: `Runde ${i + 1}`
     }));
   }
+
   loadPlayers(): void {
     this.backendService.getPlayers().subscribe(data => {
       console.log(data);  // Prüfen, ob `round_1`, `round_2`, ... enthalten sind.
       this.players = data;
+    });
+  }
+
+  openPlayerDialog(player: Player): void {
+    const dialogRef = this.dialog.open(EditScoreDialogComponent, {
+      width: '400px',
+      data: { player }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadPlayers(); // Spieler-Daten nach Update neu laden
+      }
     });
   }
 }
